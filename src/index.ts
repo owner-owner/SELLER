@@ -150,6 +150,12 @@ function startBot() {
     console.log('[Seller-Bot] 🎉 البوت رسبن وظهر داخل السيرفر!');
     clearAllTimers();
 
+    // 🌐 الانتظار 7 ثوانٍ ثم كتابة أمر /smp
+    setTimeout(() => {
+      console.log('[Seller-Bot] 🌐 إرسال الأمر /smp تلقائياً بعد 7 ثوانٍ...');
+      bot.chat('/smp');
+    }, 7000);
+
     // ⏰ بدء مؤقت الـ 4 ساعات التلقائي للخروج للاستراحة
     workTimer = setTimeout(() => {
       console.log('[Seller-Bot] 🛑 اكتملت مدة العمل (4 ساعات). جاري تسجيل الخروج للاستراحة لمدة ساعة...');
@@ -172,7 +178,7 @@ function startBot() {
 
     // تفعيل وضع الانحناء والبدء بالبيع الدوري
     setTimeout(() => {
-      bot.setControlState('sneak', true);
+      bot.setControlState('sneak', false);
 
       // إرسال أمر البيع بفاصل زمني متذبذب عشوائياً (كل 28 إلى 33 ثانية)
       mainInterval = setInterval(() => {

@@ -61,7 +61,7 @@ function startBot() {
   const bot = mineflayer.createBot({
     ...BOT_CONFIG,
     viewDistance: 'tiny',
-    physicsEnabled: false
+    physicsEnabled: true // تم تفعيل الفيزياء
   });
 
   currentBot = bot;
